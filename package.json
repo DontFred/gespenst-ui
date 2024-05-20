@@ -1,0 +1,28 @@
+{
+  "name": "gespenst-ui",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.3",
+    "@gespenst/typescript-config": "*",
+    "eslint-config-gi": "^0.1.0",
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.1.8",
+  "prettier": "eslint-config-gi/prettier",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/gespenst/core/*",
+    "packages/gespenst/components/*"
+  ]
+}
