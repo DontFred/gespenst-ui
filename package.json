@@ -1,16 +1,19 @@
 {
-  "name": "gespenst-ui",
+  "name": "gespenst",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint:fix": "turbo lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "rm -rf node_modules && rm bun.lockb"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.3",
     "@gespenst/typescript-config": "*",
-    "eslint-config-gi": "^0.1.0",
+    "eslint-config-gi": "^0.1.1",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },

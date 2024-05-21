@@ -16,6 +16,12 @@
   "cSpell.enableFiletypes": ["mdx"],
   "eslint.workingDirectories": [
     {
+      "directory": "packages/gespenst/core"
+    },
+    {
+      "directory": "packages/gespenst/components"
+    },
+    {
       "mode": "auto"
     }
   ],
