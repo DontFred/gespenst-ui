@@ -1,4 +1,4 @@
-import type { dark, light, SCHEME } from ".";
+import type { SCHEME, dark, light } from ".";
 
 type NoInfer<T> = [T][T extends unknown ? 0 : never];
 
