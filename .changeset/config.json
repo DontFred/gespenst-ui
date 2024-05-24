@@ -3,7 +3,7 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  "linked": [["docs", "@gespenst/style"]],
+  "linked": [["docs", "@gespenst/style", "@gespenst/utils"]],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

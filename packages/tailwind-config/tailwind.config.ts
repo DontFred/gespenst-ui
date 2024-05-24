@@ -4,8 +4,6 @@ import { gespenst } from "@gespenst/style";
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
-
-  // darkMode: ["class"],
   plugins: [gespenst],
 };
 
