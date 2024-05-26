@@ -1,0 +1,46 @@
+{
+  "name": "@gespenst/typo",
+  "version": "0.1.0",
+  "description": "The typo component for gespenst",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch --dts",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DontFred/gespenst.git",
+    "directory": "packages/gespenst/core/typo"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@gespenst/utils": "*",
+    "class-variance-authority": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-gi": "^0.1.3",
+    "eslint-plugin-storybook": "^0.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.0.2"
+  }
+}

@@ -3,28 +3,30 @@
 The tailwind plugin for gespenst.
 
 ```sh
-boo@gespenst:~/hui-buh$ bun add -d @gespenst/icon
+boo@gespenst:~/hui-buh$ bun add @gespenst/icon
 # or
-boo@gespenst:~/hui-buh$ npm i -D @gespenst/icon
+boo@gespenst:~/hui-buh$ npm i @gespenst/icon
 # or
-boo@gespenst:~/hui-buh$ yarn add -D @gespenst/icon
+boo@gespenst:~/hui-buh$ yarn add @gespenst/icon
 # or
-boo@gespenst:~/hui-buh$ yarn add -D @gespenst/icon
+boo@gespenst:~/hui-buh$ yarn add @gespenst/icon
 ```
 
 ## Usage
 
 ```tsx
-import type { Config } from "tailwindcss";
-import { gespenst } from "@gespenst/icon";
+import Icon from "@gespenst/icon";
+// or
+import { Accessibility } from "@gespenst/icon/accessibility";
 
-const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  plugins: [gespenst],
-};
-
-export default config;
+export default function App() {
+  return (
+    <div className="flex gap-1">
+      <Icon name="accessibility" />
+      <Accessibility />
+    </div>
+  );
+}
 ```
 
 ## Documentation

@@ -540,6 +540,9 @@ export const gespenst = plugin(
         >),
       },
       extend: {
+        animation: {
+          loader: "loader 1.2s linear infinite",
+        },
         animationDelay: ({ theme }: PluginUtils) => ({
           ...theme("transitionDelay"),
         }),
@@ -596,6 +599,14 @@ export const gespenst = plugin(
               opacity: "var(--tw-exit-opacity, 1)",
               transform:
                 "translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0))",
+            },
+          },
+          loader: {
+            from: {
+              opacity: "1",
+            },
+            to: {
+              opacity: ".15",
             },
           },
         },
