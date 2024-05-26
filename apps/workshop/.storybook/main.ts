@@ -11,8 +11,10 @@ function getAbsolutePath(value: string): any {
 }
 const config: StorybookConfig = {
   stories: [
-    "../../../gespenst/components/**/*.mdx",
-    "../../../gespenst/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../../gespenst/components/**/storybook/*.mdx",
+    "../../../gespenst/components/**/storybook/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../../gespenst/core/**/storybook/*.mdx",
+    "../../../gespenst/core/**/storybook/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-onboarding"),

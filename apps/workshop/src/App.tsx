@@ -1,3 +1,7 @@
+/**
+ * App component
+ * @returns App component
+ */
 function App() {
   return <div />;
 }

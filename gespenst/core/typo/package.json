@@ -17,6 +17,11 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./variants": {
+      "import": "./dist/variants.mjs",
+      "require": "./dist/variants.js",
+      "types": "./dist/variants.d.ts"
     }
   },
   "repository": {

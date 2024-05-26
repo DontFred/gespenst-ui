@@ -586,6 +586,9 @@ export const gespenst = plugin(
           DEFAULT: "100%",
           ...theme("translate"),
         }),
+        borderColor: {
+          DEFAULT: "hsla(0,0%,100%,.145)",
+        },
         keyframes: {
           enter: {
             from: {

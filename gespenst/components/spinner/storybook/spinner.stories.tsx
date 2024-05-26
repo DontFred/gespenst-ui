@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof Spinner> = {
   argTypes: {},
   component: Spinner,
-  title: "UI/Spinner",
+  title: "Components/Spinner",
 };
 
 export default meta;

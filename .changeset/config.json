@@ -9,6 +9,7 @@
       "@gespenst/style",
       "@gespenst/utils",
       "@gespenst/icon",
+      "@gespenst/typo",
       "@gespenst/button"
     ]
   ],

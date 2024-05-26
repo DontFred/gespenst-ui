@@ -8,7 +8,7 @@
     "dev": "tsup src --watch --dts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "svgr": "bunx @svgr/cli --filename-case kebab -- svgs && bun run scripts/gen-index.ts &&  bun run scripts/get-types.ts && bun run scripts/gen-export.ts && bun run lint:fix"
+    "svgr": "bunx @svgr/cli --filename-case kebab -- assets && bun run scripts/gen-index.ts &&  bun run scripts/gen-types.ts && bun run scripts/gen-export.ts && bun run scripts/gen-story.ts && bun run lint:fix"
   },
   "files": [
     "dist"

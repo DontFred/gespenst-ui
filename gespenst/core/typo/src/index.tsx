@@ -79,6 +79,7 @@ const Text = forwardRef<HTMLElement, TextProps>(
         );
       }
     }
+    return <Comp className={className} {...rest} />;
   }
 ) as unknown as TextComponent;
 
@@ -102,7 +103,7 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
     return (
       <div
         className={cn(
-          "border-border my-6 w-full overflow-y-auto rounded-xl border",
+          "my-6 w-full overflow-y-auto rounded-xl border",
           containerClassName
         )}
         ref={ref}
@@ -133,7 +134,7 @@ const THead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
   ({ children, className, ...rest }, ref) => {
     return (
       <thead
-        className={cn("bg-background border-b", className)}
+        className={cn("bg-background-100 border-b", className)}
         ref={ref}
         {...rest}
       >
