@@ -10,7 +10,8 @@
       "@gespenst/utils",
       "@gespenst/icon",
       "@gespenst/typo",
-      "@gespenst/button"
+      "@gespenst/button",
+      "@gespenst/spinner"
     ]
   ],
   "access": "restricted",

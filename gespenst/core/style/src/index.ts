@@ -326,6 +326,38 @@ const gespenstConfig: {
 const resolved = resolveTwcConfig(gespenstTheme, gespenstConfig);
 
 /**
+ * Convert the colors to a format that can be used by inner-border
+ * @param colors - The colors to convert
+ * @returns The converted colors
+ */
+function convertColor(colors: Record<string, string>): Record<string, string> {
+  const convertedColors: Record<string, string | undefined> = {};
+
+  /**
+   * Get the css variable for a color
+   * @param colorName - The name of the color
+   * @returns The css variable
+   */
+  function getCssVariable(colorName: string): string {
+    if (gespenstConfig.produceCssVariable) {
+      return gespenstConfig.produceCssVariable(colorName);
+    }
+    return `--gespenst-${colorName}`;
+  }
+
+  Object.keys(colors).forEach((key) => {
+    if (typeof colors[key] === "function") {
+      convertedColors[key] =
+        `hsl(var(${getCssVariable(key)}) / var(${getCssVariable(key)}-opacity, var(--tw-bg-opacity)))`;
+    } else {
+      convertedColors[key] = colors[key];
+    }
+  });
+  return convertedColors as Record<string, string>;
+}
+
+// TODO: Add custom colors here
+/**
  * Gespenst is a Tailwind CSS plugin that provides a set of utilities to style the gespenst library.
  * The hole library is based on tw-colors by L-Blondy, tailwindcss-inner-border by kripod and tailwindcss-animate by jamiebuilds.
  * @see https://github.com/L-Blondy/tw-colors
@@ -504,7 +536,7 @@ export const gespenst = plugin(
         type: ["color", "any"],
         // eslint-disable-next-line @typescript-eslint/no-unused-vars -- The _ is used to remove the DEFAULT key from the color palette
         values: (({ DEFAULT: _, ...colors }) => colors)(
-          flattenColorPalette(theme("borderColor"))
+          flattenColorPalette(convertColor(theme("borderColor")))
         ),
       }
     );
@@ -588,6 +620,10 @@ export const gespenst = plugin(
         }),
         borderColor: {
           DEFAULT: "hsla(0,0%,100%,.145)",
+        },
+        fontFamily: {
+          mono: ["var(--font-geist-mono)"],
+          sans: ["var(--font-geist-sans)"],
         },
         keyframes: {
           enter: {

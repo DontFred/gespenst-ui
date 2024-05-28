@@ -27,5 +27,9 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
+  staticDirs: ["../public"],
 };
 export default config;

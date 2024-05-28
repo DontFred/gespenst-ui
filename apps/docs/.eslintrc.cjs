@@ -1,6 +1,9 @@
+var path = require("path");
+const dir = path.resolve(__dirname);
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["gi/next"],
+  extends: ["@gespenst/eslint-config/next"],
   root: true,
   ignorePatterns: ["next.config.mjs"],
   parserOptions: {

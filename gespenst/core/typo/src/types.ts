@@ -2,6 +2,7 @@ import type { VariantProps } from "class-variance-authority";
 import type { FC, HTMLAttributes, RefAttributes } from "react";
 
 import type {
+  kbdVariants,
   responsiveSizeTextVariants,
   responsiveVariantTextVariants,
   textVariants,
@@ -101,3 +102,13 @@ export interface TableBodyProps
   extends HTMLAttributes<HTMLTableSectionElement> {}
 
 export interface TableCellProps extends HTMLAttributes<HTMLTableCellElement> {}
+
+export interface KbdProps
+  extends HTMLAttributes<HTMLElement>,
+    VariantProps<typeof kbdVariants> {
+  alt?: boolean;
+  cmd?: boolean;
+  ctrl?: boolean;
+  meta?: boolean;
+  shift?: boolean;
+}

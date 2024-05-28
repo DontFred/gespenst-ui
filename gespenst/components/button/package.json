@@ -1,7 +1,7 @@
 {
-  "name": "@gespenst/style",
+  "name": "@gespenst/button",
   "version": "0.1.0",
-  "description": "The tailwind plugin for gespenst",
+  "description": "The button component for gespenst",
   "license": "MIT",
   "scripts": {
     "build": "tsup src --dts",
@@ -22,26 +22,28 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DontFred/gespenst.git",
-    "directory": "packages/gespenst/core/style"
+    "directory": "packages/gespenst/core/button"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "tailwindcss": ">=3.4.3"
+    "@ark-ui/react": "^3.0.1",
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
-    "color": "^4.2.3",
-    "flat": "^5.0.2",
-    "lodash.foreach": "^4.5.0"
+    "@ark-ui/react": "^3.0.1",
+    "class-variance-authority": "^0.7.0",
+    "@gespenst/utils": "*",
+    "@gespenst/typo": "*",
+    "@gespenst/spinner": "*"
   },
   "devDependencies": {
-    "@types/color": "^3.0.6",
-    "@types/flat": "^5.0.2",
-    "@types/lodash.foreach": "^4.5.9",
     "eslint": "^8",
     "@gespenst/eslint-config": "*",
-    "tailwindcss": "^3.4.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tsup": "^8.0.2"
   }
 }

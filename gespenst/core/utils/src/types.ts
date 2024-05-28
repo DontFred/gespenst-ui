@@ -1,3 +1,3 @@
-import type { ClassValue } from "clsx";
+import type { ClassNameValue } from "tailwind-merge";
 
-export type UtilsCnAttributes = ClassValue[];
+export type UtilsCnAttributes = ClassNameValue[];

@@ -1,3 +1,3 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLArkProps } from "@ark-ui/react";
 
-export interface SpinnerProps extends HTMLAttributes<HTMLDivElement> {}
+export interface SpinnerProps extends HTMLArkProps<"div"> {}

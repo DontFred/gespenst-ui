@@ -2,6 +2,7 @@ import { cn } from "@gespenst/utils";
 import { forwardRef } from "react";
 
 import {
+  kbdVariants,
   responsiveSizeTextVariants,
   responsiveVariantTextVariants,
   textVariants,
@@ -10,6 +11,7 @@ import {
 import type { RefObject } from "react";
 
 import type {
+  KbdProps,
   ResponsiveSizeTextVariants,
   ResponsiveVariantTextVariants,
   TableBodyProps,
@@ -256,4 +258,24 @@ const TD = forwardRef<HTMLTableCellElement, TableCellProps>(
 
 TD.displayName = "TD";
 
-export { TBody, TD, TH, THead, TR, Table, Text };
+const Kbd = forwardRef<HTMLElement, KbdProps>(
+  (
+    { alt, children, className, cmd, ctrl, meta, shift, size, ...rest },
+    ref
+  ) => {
+    return (
+      <kbd className={cn(kbdVariants({ size }), className)} {...rest} ref={ref}>
+        {ctrl && <span>Ctrl</span>}
+        {cmd && <span className="[&:not(:first-child)]:ml-1">⌘</span>}
+        {shift && <span className="[&:not(:first-child)]:ml-1">⇧</span>}
+        {alt && <span className="[&:not(:first-child)]:ml-1">⌥</span>}
+        {meta && <span className="[&:not(:first-child)]:ml-1">⌃</span>}
+        <span className="[&:not(:first-child)]:ml-1">{children}</span>
+      </kbd>
+    );
+  }
+);
+
+Kbd.displayName = "Kbd";
+
+export { Kbd, TBody, TD, TH, THead, TR, Table, Text };

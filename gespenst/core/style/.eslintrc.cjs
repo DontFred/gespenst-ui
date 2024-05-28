@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["gi/typescript"],
+  extends: ["@gespenst/eslint-config/typescript"],
   root: true,
   parserOptions: {
     project: "./tsconfig.json",

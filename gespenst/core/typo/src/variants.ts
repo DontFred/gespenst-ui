@@ -19,16 +19,16 @@ const textVariants = cva("m-0 font-sans", {
       48: "text-5xl font-bold leading-[3.5rem] tracking-[-0.066875rem]",
     },
     variant: {
-      "button-12": "text-xs font-medium tracking-[0px]",
-      "button-14": "text-sm font-medium tracking-[0px]",
-      "button-16": "text-base font-medium leading-5 tracking-[0px]",
+      "button-12": "text-xs font-medium tracking-normal",
+      "button-14": "text-sm font-medium tracking-normal",
+      "button-16": "text-base font-medium leading-5 tracking-normal",
       "copy-13":
-        "text-[0.8125rem] font-normal leading-[1.125rem] tracking-[0px]",
-      "copy-14": "text-sm font-normal leading-5 tracking-[0px]",
-      "copy-16": "text-base font-normal leading-6 tracking-[0px]",
-      "copy-18": "text-lg font-normal leading-7 tracking-[0px]",
-      "copy-20": "text-xl font-normal leading-9 tracking-[0px]",
-      "copy-24": "text-2xl font-normal leading-9 tracking-[0px]",
+        "text-[0.8125rem] font-normal leading-[1.125rem] tracking-normal",
+      "copy-14": "text-sm font-normal leading-5 tracking-normal",
+      "copy-16": "text-base font-normal leading-6 tracking-normal",
+      "copy-18": "text-lg font-normal leading-7 tracking-normal",
+      "copy-20": "text-xl font-normal leading-9 tracking-normal",
+      "copy-24": "text-2xl font-normal leading-9 tracking-normal",
       "heading-16": "text-base font-semibold tracking-[-0.32px]",
       "heading-20":
         "text-xl font-semibold leading-[1.625rem] tracking-[-0.4px]",
@@ -44,12 +44,12 @@ const textVariants = cva("m-0 font-sans", {
         "text-[4rem] font-semibold leading-[4rem] tracking-[-3.84px]",
       "heading-72":
         "text-7xl font-semibold leading-[4.5rem] tracking-[-4.32px]",
-      "label-12": "text-xs font-normal tracking-[0px]",
-      "label-13": "text-[0.8125rem] font-normal leading-4 tracking-[0px]",
-      "label-14": "text-sm font-normal leading-5 tracking-[0px]",
-      "label-16": "text-base font-normal leading-5 tracking-[0px]",
-      "label-18": "text-lg font-normal leading-5 tracking-[0px]",
-      "label-20": "text-xl font-normal leading-8 tracking-[0px]",
+      "label-12": "text-xs font-normal tracking-normal",
+      "label-13": "text-[0.8125rem] font-normal leading-4 tracking-normal",
+      "label-14": "text-sm font-normal leading-5 tracking-normal",
+      "label-16": "text-base font-normal leading-5 tracking-normal",
+      "label-18": "text-lg font-normal leading-5 tracking-normal",
+      "label-20": "text-xl font-normal leading-8 tracking-normal",
     },
   },
 });
@@ -62,16 +62,17 @@ const textVariants = cva("m-0 font-sans", {
 const responsiveVariantTextVariants = cva("m-0 font-sans", {
   variants: {
     lg: {
-      "button-12": "lg:text-xs lg:font-medium lg:tracking-[0px]",
-      "button-14": "lg:text-sm lg:font-medium lg:tracking-[0px]",
-      "button-16": "lg:text-base lg:font-medium lg:leading-5 lg:tracking-[0px]",
+      "button-12": "lg:text-xs lg:font-medium lg:tracking-normal",
+      "button-14": "lg:text-sm lg:font-medium lg:tracking-normal",
+      "button-16":
+        "lg:text-base lg:font-medium lg:leading-5 lg:tracking-normal",
       "copy-13":
-        "lg:text-[0.8125rem] lg:font-normal lg:leading-[1.125rem] lg:tracking-[0px]",
-      "copy-14": "lg:text-sm lg:font-normal lg:leading-5 lg:tracking-[0px]",
-      "copy-16": "lg:text-base lg:font-normal lg:leading-6 lg:tracking-[0px]",
-      "copy-18": "lg:text-lg lg:font-normal lg:leading-7 lg:tracking-[0px]",
-      "copy-20": "lg:text-xl lg:font-normal lg:leading-9 lg:tracking-[0px]",
-      "copy-24": "lg:text-2xl lg:font-normal lg:leading-9 lg:tracking-[0px]",
+        "lg:text-[0.8125rem] lg:font-normal lg:leading-[1.125rem] lg:tracking-normal",
+      "copy-14": "lg:text-sm lg:font-normal lg:leading-5 lg:tracking-normal",
+      "copy-16": "lg:text-base lg:font-normal lg:leading-6 lg:tracking-normal",
+      "copy-18": "lg:text-lg lg:font-normal lg:leading-7 lg:tracking-normal",
+      "copy-20": "lg:text-xl lg:font-normal lg:leading-9 lg:tracking-normal",
+      "copy-24": "lg:text-2xl lg:font-normal lg:leading-9 lg:tracking-normal",
       "heading-16": "lg:text-base lg:font-semibold lg:tracking-[-0.32px]",
       "heading-20":
         "lg:text-xl lg:font-semibold lg:leading-[1.625rem] lg:tracking-[-0.4px]",
@@ -89,25 +90,26 @@ const responsiveVariantTextVariants = cva("m-0 font-sans", {
         "lg:text-[4rem] lg:font-semibold lg:leading-[4rem] lg:tracking-[-3.84px]",
       "heading-72":
         "lg:text-7xl lg:font-semibold lg:leading-[4.5rem] lg:tracking-[-4.32px]",
-      "label-12": "lg:text-xs lg:font-normal lg:tracking-[0px]",
+      "label-12": "lg:text-xs lg:font-normal lg:tracking-normal",
       "label-13":
-        "lg:text-[0.8125rem] lg:font-normal lg:leading-4 lg:tracking-[0px]",
-      "label-14": "lg:text-sm lg:font-normal lg:leading-5 lg:tracking-[0px]",
-      "label-16": "lg:text-base lg:font-normal lg:leading-5 lg:tracking-[0px]",
-      "label-18": "lg:text-lg lg:font-normal lg:leading-5 lg:tracking-[0px]",
-      "label-20": "lg:text-xl lg:font-normal lg:leading-8 lg:tracking-[0px]",
+        "lg:text-[0.8125rem] lg:font-normal lg:leading-4 lg:tracking-normal",
+      "label-14": "lg:text-sm lg:font-normal lg:leading-5 lg:tracking-normal",
+      "label-16": "lg:text-base lg:font-normal lg:leading-5 lg:tracking-normal",
+      "label-18": "lg:text-lg lg:font-normal lg:leading-5 lg:tracking-normal",
+      "label-20": "lg:text-xl lg:font-normal lg:leading-8 lg:tracking-normal",
     },
     md: {
-      "button-12": "sm:text-xs sm:font-medium sm:tracking-[0px]",
-      "button-14": "sm:text-sm sm:font-medium sm:tracking-[0px]",
-      "button-16": "sm:text-base sm:font-medium sm:leading-5 sm:tracking-[0px]",
+      "button-12": "sm:text-xs sm:font-medium sm:tracking-normal",
+      "button-14": "sm:text-sm sm:font-medium sm:tracking-normal",
+      "button-16":
+        "sm:text-base sm:font-medium sm:leading-5 sm:tracking-normal",
       "copy-13":
-        "sm:text-[0.8125rem] sm:font-normal sm:leading-[1.125rem] sm:tracking-[0px]",
-      "copy-14": "sm:text-sm sm:font-normal sm:leading-5 sm:tracking-[0px]",
-      "copy-16": "sm:text-base sm:font-normal sm:leading-6 sm:tracking-[0px]",
-      "copy-18": "sm:text-lg sm:font-normal sm:leading-7 sm:tracking-[0px]",
-      "copy-20": "sm:text-xl sm:font-normal sm:leading-9 sm:tracking-[0px]",
-      "copy-24": "sm:text-2xl sm:font-normal sm:leading-9 sm:tracking-[0px]",
+        "sm:text-[0.8125rem] sm:font-normal sm:leading-[1.125rem] sm:tracking-normal",
+      "copy-14": "sm:text-sm sm:font-normal sm:leading-5 sm:tracking-normal",
+      "copy-16": "sm:text-base sm:font-normal sm:leading-6 sm:tracking-normal",
+      "copy-18": "sm:text-lg sm:font-normal sm:leading-7 sm:tracking-normal",
+      "copy-20": "sm:text-xl sm:font-normal sm:leading-9 sm:tracking-normal",
+      "copy-24": "sm:text-2xl sm:font-normal sm:leading-9 sm:tracking-normal",
       "heading-16": "sm:text-base sm:font-semibold sm:tracking-[-0.32px]",
       "heading-20":
         "sm:text-xl sm:font-semibold sm:leading-[1.625rem] sm:tracking-[-0.4px]",
@@ -125,25 +127,25 @@ const responsiveVariantTextVariants = cva("m-0 font-sans", {
         "sm:text-[4rem] sm:font-semibold sm:leading-[4rem] sm:tracking-[-3.84px]",
       "heading-72":
         "sm:text-7xl sm:font-semibold sm:leading-[4.5rem] sm:tracking-[-4.32px]",
-      "label-12": "sm:text-xs sm:font-normal sm:tracking-[0px]",
+      "label-12": "sm:text-xs sm:font-normal sm:tracking-normal",
       "label-13":
-        "sm:text-[0.8125rem] sm:font-normal sm:leading-4 sm:tracking-[0px]",
-      "label-14": "sm:text-sm sm:font-normal sm:leading-5 sm:tracking-[0px]",
-      "label-16": "sm:text-base sm:font-normal sm:leading-5 sm:tracking-[0px]",
-      "label-18": "sm:text-lg sm:font-normal sm:leading-5 sm:tracking-[0px]",
-      "label-20": "sm:text-xl sm:font-normal sm:leading-8 sm:tracking-[0px]",
+        "sm:text-[0.8125rem] sm:font-normal sm:leading-4 sm:tracking-normal",
+      "label-14": "sm:text-sm sm:font-normal sm:leading-5 sm:tracking-normal",
+      "label-16": "sm:text-base sm:font-normal sm:leading-5 sm:tracking-normal",
+      "label-18": "sm:text-lg sm:font-normal sm:leading-5 sm:tracking-normal",
+      "label-20": "sm:text-xl sm:font-normal sm:leading-8 sm:tracking-normal",
     },
     sm: {
-      "button-12": "text-xs font-medium tracking-[0px]",
-      "button-14": "text-sm font-medium tracking-[0px]",
-      "button-16": "text-base font-medium leading-5 tracking-[0px]",
+      "button-12": "text-xs font-medium tracking-normal",
+      "button-14": "text-sm font-medium tracking-normal",
+      "button-16": "text-base font-medium leading-5 tracking-normal",
       "copy-13":
-        "text-[0.8125rem] font-normal leading-[1.125rem] tracking-[0px]",
-      "copy-14": "text-sm font-normal leading-5 tracking-[0px]",
-      "copy-16": "text-base font-normal leading-6 tracking-[0px]",
-      "copy-18": "text-lg font-normal leading-7 tracking-[0px]",
-      "copy-20": "text-xl font-normal leading-9 tracking-[0px]",
-      "copy-24": "text-2xl font-normal leading-9 tracking-[0px]",
+        "text-[0.8125rem] font-normal leading-[1.125rem] tracking-normal",
+      "copy-14": "text-sm font-normal leading-5 tracking-normal",
+      "copy-16": "text-base font-normal leading-6 tracking-normal",
+      "copy-18": "text-lg font-normal leading-7 tracking-normal",
+      "copy-20": "text-xl font-normal leading-9 tracking-normal",
+      "copy-24": "text-2xl font-normal leading-9 tracking-normal",
       "heading-16": "text-base font-semibold tracking-[-0.32px]",
       "heading-20":
         "text-xl font-semibold leading-[1.625rem] tracking-[-0.4px]",
@@ -159,12 +161,12 @@ const responsiveVariantTextVariants = cva("m-0 font-sans", {
         "text-[4rem] font-semibold leading-[4rem] tracking-[-3.84px]",
       "heading-72":
         "text-7xl font-semibold leading-[4.5rem] tracking-[-4.32px]",
-      "label-12": "text-xs font-normal tracking-[0px]",
-      "label-13": "text-[0.8125rem] font-normal leading-4 tracking-[0px]",
-      "label-14": "text-sm font-normal leading-5 tracking-[0px]",
-      "label-16": "text-base font-normal leading-5 tracking-[0px]",
-      "label-18": "text-lg font-normal leading-5 tracking-[0px]",
-      "label-20": "text-xl font-normal leading-8 tracking-[0px]",
+      "label-12": "text-xs font-normal tracking-normal",
+      "label-13": "text-[0.8125rem] font-normal leading-4 tracking-normal",
+      "label-14": "text-sm font-normal leading-5 tracking-normal",
+      "label-16": "text-base font-normal leading-5 tracking-normal",
+      "label-18": "text-lg font-normal leading-5 tracking-normal",
+      "label-20": "text-xl font-normal leading-8 tracking-normal",
     },
   },
 });
@@ -209,7 +211,23 @@ const responsiveSizeTextVariants = cva("m-0 font-sans", {
   },
 });
 
+const kbdVariants = cva(
+  "ml-1 inline-block rounded bg-background-100 text-center align-middle font-sans leading-[1.7em] inner-border",
+  {
+    defaultVariants: {
+      size: "normal",
+    },
+    variants: {
+      size: {
+        normal: "min-h-6 min-w-6 px-1.5 text-sm leading-[1.7em]",
+        small: "min-h-5 min-w-5 px-1 text-xs leading-[1.7em]",
+      },
+    },
+  }
+);
+
 export {
+  kbdVariants,
   responsiveSizeTextVariants,
   responsiveVariantTextVariants,
   textVariants,
