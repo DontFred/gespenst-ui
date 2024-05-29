@@ -1,6 +1,6 @@
 # `@gespenst/typo`
 
-The tailwind plugin for gespenst.
+The Typography components for gespenst
 
 ```sh
 boo@gespenst:~/hui-buh$ bun add @gespenst/typo

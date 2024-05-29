@@ -1,6 +1,6 @@
 # `@gespenst/spinner`
 
-The tailwind plugin for gespenst.
+The Spinner component for indicating loading states.
 
 ```sh
 boo@gespenst:~/hui-buh$ bun add @gespenst/spinner

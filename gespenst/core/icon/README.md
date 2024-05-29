@@ -1,6 +1,6 @@
 # `@gespenst/icon`
 
-The tailwind plugin for gespenst.
+The icon pack for gespenst.
 
 ```sh
 boo@gespenst:~/hui-buh$ bun add @gespenst/icon

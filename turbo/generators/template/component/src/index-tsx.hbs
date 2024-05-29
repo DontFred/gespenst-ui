@@ -1,0 +1,28 @@
+import { ark } from "@ark-ui/react/factory";
+import { cn } from "@gespenst/utils";
+import { forwardRef } from "react";
+
+import type { {{ pascalCase name }}Props } from "./types";
+
+/**
+ * {{ pascalCase name }} \
+ * {{ description }}
+ * @param {{ pascalCase name }}Props - Has all HTMLArkProps<"{{ root }}"> Props
+ * @param {{ pascalCase name }}Props.className - To style the {{ name }}, mainly for size and color (additional class will get merged by cn()).
+ * @returns JSX.Element
+ * @example
+ *  <{{ pascalCase name }}>
+ *    Template
+ *  </{{ pascalCase name }}>
+ */
+const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase root }}Element, {{ pascalCase name }}Props>(
+  ({ className, ...rest }, ref) => {
+    return (
+      <ark.div className={cn("", className)} ref={ref} {...rest}/>
+    );
+  }
+);
+
+{{ pascalCase name }}.displayName = "{{ pascalCase name }}";
+
+export { {{ pascalCase name }} };

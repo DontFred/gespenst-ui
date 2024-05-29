@@ -5,13 +5,13 @@
   "fixed": [],
   "linked": [
     [
-      "docs",
-      "@gespenst/style",
-      "@gespenst/utils",
-      "@gespenst/icon",
-      "@gespenst/typo",
       "@gespenst/button",
-      "@gespenst/spinner"
+      "@gespenst/spinner",
+      "@gespenst/utils",
+      "@gespenst/typo",
+      "@gespenst/icon",
+      "@gespenst/style",
+      "docs"
     ]
   ],
   "access": "restricted",

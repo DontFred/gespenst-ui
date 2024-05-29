@@ -10,7 +10,8 @@
     "strings": "on"
   },
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.hbs": "handlebars"
   },
   "cSpell.words": ["gespenst", "nowarnings", "tailwindcss", "tsup"],
   "cSpell.enableFiletypes": ["mdx"],
