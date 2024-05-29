@@ -8,7 +8,7 @@ import type { {{ pascalCase name }}Props } from "./types";
  * {{ pascalCase name }} \
  * {{ description }}
  * @param {{ pascalCase name }}Props - Has all HTMLArkProps<"{{ root }}"> Props
- * @param {{ pascalCase name }}Props.className - To style the {{ name }}, mainly for size and color (additional class will get merged by cn()).
+ * @param {{ pascalCase name }}Props.className - To style the {{ name }} (additional class will get merged by cn()).
  * @returns JSX.Element
  * @example
  *  <{{ pascalCase name }}>
@@ -18,7 +18,7 @@ import type { {{ pascalCase name }}Props } from "./types";
 const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase root }}Element, {{ pascalCase name }}Props>(
   ({ className, ...rest }, ref) => {
     return (
-      <ark.div className={cn("", className)} ref={ref} {...rest}/>
+      <ark.{{ root }} className={cn("", className)} ref={ref} {...rest}/>
     );
   }
 );

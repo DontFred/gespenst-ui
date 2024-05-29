@@ -28,12 +28,18 @@ function getInitials(name = "") {
  * Avatar \
  * Avatar is used to display an image with an fallback if loading or errored. Mainly for User indication.
  * @param AvatarProps - Has all HTMLArkProps<"div"> Props
- * @param AvatarProps.className - To style the avatar, mainly for size and color (additional class will get merged by cn()).
+ * @param AvatarProps.className - To style the avatar (additional class will get merged by cn()).
+ * @param AvatarProps.fallback - To show the fallback if image is not available.
+ * @param AvatarProps.fallbackClassName - To style the fallback (additional class will get merged by cn()).
+ * @param AvatarProps.fallbackRef - To get the fallback ref.
+ * @param AvatarProps.imageClassName - To style the image (additional class will get merged by cn()).
+ * @param AvatarProps.imageRef - To get the image ref.
+ * @param AvatarProps.name - Name to get initials from and label.
+ * @param AvatarProps.noImage - To hide the image.
+ * @param AvatarProps.src - Image source.
  * @returns JSX.Element
  * @example
- *  <Avatar>
- *    Template
- *  </Avatar>
+ *  <Avatar name="Dont Fred" src="https://github.com/1.png" />
  */
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
   (
@@ -86,6 +92,26 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
 
 Avatar.displayName = "Avatar";
 
+/**
+ * AvatarGroup \
+ * AvatarGroup is used to display multiple avatars in a group with a limit.
+ * @param AvatarGroupProps - Has all HTMLArkProps<"span"> Props
+ * @param AvatarGroupProps.avatarClassName - To style the avatar (additional class will get merged by cn()).
+ * @param AvatarGroupProps.extenderClassName - To style the extender (additional class will get merged by cn()).
+ * @param AvatarGroupProps.extenderRef - To get the extender ref.
+ * @param AvatarGroupProps.limit - To set the limit of avatars to display.
+ * @param AvatarGroupProps.members - Array of members to display.
+ * @returns JSX.Element
+ * @example
+ *  <AvatarGroup
+ *    members={[
+ *      { name: "John Doe", src: "https://github.com/1.png" },
+ *      { name: "Jane Doe", src: "https://github.com/2.png" },
+ *      { name: "Mario Doe", src: "https://github.com/3.png" },
+ *      { name: "Luigi Doe", src: "https://github.com/4.png" },
+ *    ]}
+ *  />
+ */
 const AvatarGroup = forwardRef<HTMLSpanElement, AvatarGroupProps>(
   (
     {

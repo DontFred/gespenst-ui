@@ -25,8 +25,7 @@ const buttonVariants = cva(
       },
       variant: {
         error: "bg-red-800 text-gray-1000 hover:bg-red-900",
-        primary:
-          "bg-gray-1000 text-background-100 inner-border inner-border-transparent hover:bg-[#ccc] hover:inner-border-gray-200",
+        primary: "bg-gray-1000 text-background-100 hover:bg-[#ccc]",
         secondary:
           "bg-background-100 text-gray-1000 inner-border hover:bg-gray-alpha-200",
         tertiary: "bg-transparent text-gray-1000 hover:bg-gray-alpha-200",
