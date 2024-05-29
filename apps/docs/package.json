@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@gespenst/avatar": "*",
     "@gespenst/icon": "*",
     "@gespenst/spinner": "*",
     "@gespenst/typo": "*",

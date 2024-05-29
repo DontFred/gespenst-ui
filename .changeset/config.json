@@ -5,6 +5,7 @@
   "fixed": [],
   "linked": [
     [
+      "@gespenst/avatar",
       "@gespenst/button",
       "@gespenst/spinner",
       "@gespenst/utils",

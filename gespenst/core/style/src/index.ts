@@ -348,7 +348,7 @@ function convertColor(colors: Record<string, string>): Record<string, string> {
   Object.keys(colors).forEach((key) => {
     if (typeof colors[key] === "function") {
       convertedColors[key] =
-        `hsl(var(${getCssVariable(key)}) / var(${getCssVariable(key)}-opacity, var(--tw-bg-opacity)))`;
+        `hsl(var(${getCssVariable(key)}) / var(${getCssVariable(key)}-opacity, 1))`;
     } else {
       convertedColors[key] = colors[key];
     }

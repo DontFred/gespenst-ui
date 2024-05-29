@@ -1,3 +1,4 @@
+import { Avatar } from "@gespenst/avatar";
 import Icon from "@gespenst/icon";
 import { Accessibility } from "@gespenst/icon/accessibility";
 import { Spinner } from "@gespenst/spinner";
@@ -5,7 +6,7 @@ import { Kbd, TBody, TD, TH, THead, TR, Table, Text } from "@gespenst/typo";
 
 export default function Home() {
   return (
-    <div className="p-10 text-gray-alpha-200 animate-in fade-in zoom-in">
+    <div className="p-10 animate-in fade-in zoom-in">
       <button className="text-secondary-light inner-border">Hello</button>
       <Icon name="arrow-right" />
       <Accessibility className="text-red-700" />
@@ -46,6 +47,7 @@ export default function Home() {
       <Kbd cmd meta>
         /
       </Kbd>
+      <Avatar name="FG G" />
     </div>
   );
 }

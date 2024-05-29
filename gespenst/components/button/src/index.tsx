@@ -11,9 +11,20 @@ import type { ComponentProps } from "react";
 import type { ButtonProps } from "./types";
 
 /**
- * Button
+ * Button \
+ * Button is used to trigger an action.
  * @param ButtonProps - Has all HTMLButtonElement Props
- * @param ButtonProps.className - To style the button, mainly for size and color (additional class will get merged by cn()).
+ * @param ButtonProps.className - To style the button (additional class will get merged by cn()).
+ * @param ButtonProps.disabled - To disable the button.
+ * @param ButtonProps.labelClassName - To style the label (additional class will get merged by cn()).
+ * @param ButtonProps.labelRef - To get the label ref.
+ * @param ButtonProps.loading - To indicate loading state.
+ * @param ButtonProps.prefix - To add prefix icon.
+ * @param ButtonProps.shape - To set the button shape (angular, round).
+ * @param ButtonProps.size - To set the button size (xs*, sm, md, lg). *xs is only for icon button.
+ * @param ButtonProps.suffix - To add suffix icon.
+ * @param ButtonProps.svgOnly - To set the button as icon button.
+ * @param ButtonProps.variant - To set the button variant (primary, secondary, tertiary, error, warning).
  * @returns JSX.Element
  * @example
  *  <Button>Hello</Button>

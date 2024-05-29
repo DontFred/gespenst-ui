@@ -31,5 +31,8 @@
     "packages/*",
     "gespenst/core/*",
     "gespenst/components/*"
+  ],
+  "trustedDependencies": [
+    "core-js-pure"
   ]
 }

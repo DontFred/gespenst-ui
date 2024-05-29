@@ -1,4 +1,4 @@
-import type { HTMLArkProps } from "@ark-ui/react";
+import type { HTMLArkProps } from "@ark-ui/react/factory";
 import type { VariantProps } from "class-variance-authority";
 import type { ReactNode, RefObject } from "react";
 
