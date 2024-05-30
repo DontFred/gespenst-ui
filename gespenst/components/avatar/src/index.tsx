@@ -62,14 +62,14 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
       <ArkAvatarRoot
         aria-label={`Avatar for ${name}` ?? ariaLabel}
         className={cn(
-          "relative flex border border-background inner-border inner-border-gray-alpha-400 justify-center items-center size-8 shrink-0 overflow-hidden rounded-full",
+          "relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-background inner-border inner-border-gray-alpha-400",
           className
         )}
         ref={ref}
         {...rest}
       >
         <ArkAvatarFallback
-          className={cn("font-sans font-semibold text-xs", fallbackClassName)}
+          className={cn("font-sans text-xs font-semibold", fallbackClassName)}
           ref={fallbackRef}
         >
           {fallback ? fallback : getInitials(name)}
@@ -78,7 +78,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
           <ArkAvatarImage
             alt={name}
             className={cn(
-              "aspect-square h-full w-full object-cover",
+              "aspect-square size-full object-cover",
               imageClassName
             )}
             ref={imageRef}

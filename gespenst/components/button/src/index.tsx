@@ -53,7 +53,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       size === "lg" ? "button-16" : "button-14";
 
     const loadingDisabledClassName =
-      "bg-gray-100 text-gray-700 inner-border inner-border-gray-400 cursor-not-allowed select-none pointer-events-none";
+      "bg-gray-100 text-gray-700 inner-border inner-border-gray-400 cursor-not-allowed select-none";
 
     return (
       <ark.button
@@ -81,7 +81,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <Text
           as="span"
           className={cn(
-            "text-ellipsis whitespace-nowrap overflow-hidden inline-block px-1.5",
+            "inline-block truncate px-1.5",
             svgOnly && "flex items-center justify-center",
             labelClassName
           )}

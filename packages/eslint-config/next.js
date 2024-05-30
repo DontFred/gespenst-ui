@@ -1,4 +1,4 @@
-const { resolve } = require("node:path");
+const { resolve, join } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
 
@@ -19,6 +19,10 @@ module.exports = {
       typescript: {
         project,
       },
+    },
+    tailwindcss: {
+      config: join(__dirname, "../tailwind-config/tailwind.config.ts"),
+      callees: ["cn"],
     },
   },
   rules: {

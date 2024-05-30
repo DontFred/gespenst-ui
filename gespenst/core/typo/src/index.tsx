@@ -136,7 +136,7 @@ const THead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
   ({ children, className, ...rest }, ref) => {
     return (
       <thead
-        className={cn("bg-background-100 border-b", className)}
+        className={cn("border-b bg-background-100", className)}
         ref={ref}
         {...rest}
       >

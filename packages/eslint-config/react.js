@@ -22,7 +22,7 @@ module.exports = {
     },
     tailwindcss: {
       config: join(__dirname, "../tailwind-config/tailwind.config.ts"),
-      //   cssFiles: ["**/*.css"],
+      callees: ["cn"],
     },
   },
   rules: {

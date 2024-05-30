@@ -82,7 +82,7 @@ const BadgeContainer = forwardRef<HTMLSpanElement, BadgeContainerProps>(
         {children}
         <Badge
           className={cn(
-            "shadow-md border-background absolute right-[5%] top-[5%] origin-center -translate-y-1/2 translate-x-1/2",
+            "absolute right-[5%] top-[5%] origin-center -translate-y-1/2 translate-x-1/2 border-background shadow-md",
             className
           )}
           ref={ref}

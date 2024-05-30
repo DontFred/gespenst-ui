@@ -1,4 +1,5 @@
 import { Avatar } from "@gespenst/avatar";
+import { Checkbox } from "@gespenst/checkbox";
 import Icon from "@gespenst/icon";
 import { Accessibility } from "@gespenst/icon/accessibility";
 import { Spinner } from "@gespenst/spinner";
@@ -48,6 +49,7 @@ export default function Home() {
         /
       </Kbd>
       <Avatar name="FG G" />
+      <Checkbox>Checkbox</Checkbox>
     </div>
   );
 }

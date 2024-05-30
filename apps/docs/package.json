@@ -10,6 +10,8 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@gespenst/checkbox": "*",
+    "@gespenst/card": "*",
     "@gespenst/badge": "*",
     "@gespenst/avatar": "*",
     "@gespenst/icon": "*",
