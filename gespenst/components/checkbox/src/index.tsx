@@ -17,12 +17,21 @@ import type { CheckboxProps } from "./types";
 /**
  * Checkbox \
  * Checkbox is to indicate/toggle a boolean state
- * @param CheckboxProps - Has all HTMLArkProps<"div"> Props
+ * @param CheckboxProps - Has all Ark CheckboxRoot Props
  * @param CheckboxProps.className - To style the checkbox (additional class will get merged by cn()).
+ * @param CheckboxProps.controllerClassName - To style the controller (additional class will get merged by cn()).
+ * @param CheckboxProps.controllerRef - To get the reference of the controller.
+ * @param CheckboxProps.indicatorCheckClassName - To style the check indicator (additional class will get merged by cn()).
+ * @param CheckboxProps.indicatorCheckRef - To get the reference of the check indicator.
+ * @param CheckboxProps.indicatorIndeterminateClassName - To style the indeterminate indicator (additional class will get merged by cn()).
+ * @param CheckboxProps.indicatorIndeterminateRef - To get the reference of the indeterminate indicator.
+ * @param CheckboxProps.labelClassName - To style the label (additional class will get merged by cn()).
+ * @param CheckboxProps.labelRef - To get the reference of the label.
+ * @param CheckboxProps.children - To render the children, can be a function to get the checkbox state.
  * @returns JSX.Element
  * @example
  *  <Checkbox>
- *    Template
+ *    Label
  *  </Checkbox>
  */
 const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
@@ -36,6 +45,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
       indicatorCheckRef,
       indicatorIndeterminateClassName,
       indicatorIndeterminateRef,
+      inputRef,
       labelClassName,
       labelRef,
       ...rest
@@ -47,6 +57,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
         className={cn(
           "inline-flex cursor-pointer items-center",
           "data-[disabled]:cursor-not-allowed data-[disabled]:select-none data-[disabled]:text-gray-500",
+          "data-[invalid]:text-red-900",
           className
         )}
         ref={ref}
@@ -55,8 +66,11 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
         <ArkCheckboxControl
           className={cn(
             "relative inline-flex size-4 items-center justify-center rounded border border-gray-700 bg-background-100 transition-all",
-            " data-[state=checked]:border-gray-1000 data-[state=checked]:bg-gray-1000 [&:not([data-state=checked])]:data-[hover]:bg-gray-100",
+            "ring-offset-background focus-visible:outline-none data-[focus]:bg-gray-100 data-[focus]:ring-2 data-[focus]:ring-blue-900 data-[focus]:ring-offset-2",
+            " [&:not([data-state=checked])]:[&:not([data-invalid])]:data-[hover]:bg-gray-100",
+            "data-[state=checked]:border-gray-1000 data-[state=checked]:bg-gray-1000",
             "data-[disabled]:border-gray-500 data-[disabled]:data-[state=checked]:border-gray-600 data-[disabled]:bg-gray-100 data-[disabled]:data-[state=checked]:bg-gray-600",
+            "data-[invalid]:border-red-900 data-[invalid]:data-[state=checked]:border-red-900 data-[invalid]:data-[hover]:bg-red-100 data-[invalid]:data-[state=checked]:bg-red-900",
             controllerClassName
           )}
           ref={controllerRef}
@@ -79,6 +93,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
             className={cn(
               "text-gray-700",
               "data-[disabled]:text-gray-500",
+              "data-[invalid]:text-red-900",
               indicatorIndeterminateClassName
             )}
             indeterminate
@@ -103,7 +118,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
             <ArkCheckboxLabel className="inline-flex">
               <Text
                 as="span"
-                className={cn("ml-2", labelClassName)}
+                className={cn("ml-2 transition-colors", labelClassName)}
                 ref={labelRef}
                 variant="label-13"
               >
@@ -112,7 +127,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
             </ArkCheckboxLabel>
           )}
         </ArkCheckboxContext>
-        <ArkCheckboxHiddenInput />
+        <ArkCheckboxHiddenInput ref={inputRef} />
       </ArkCheckboxRoot>
     );
   }

@@ -5,6 +5,7 @@ import type {
 import type { ReactNode, RefObject } from "react";
 
 export interface CheckboxProps extends Omit<ArkCheckboxRootProps, "children"> {
+  asChild?: undefined;
   children?: ArkCheckboxContextProps["children"] | ReactNode;
   controllerClassName?: string;
   controllerRef?: RefObject<HTMLDivElement>;
@@ -12,6 +13,7 @@ export interface CheckboxProps extends Omit<ArkCheckboxRootProps, "children"> {
   indicatorCheckRef?: RefObject<HTMLDivElement>;
   indicatorIndeterminateClassName?: string;
   indicatorIndeterminateRef?: RefObject<HTMLDivElement>;
+  inputRef?: RefObject<HTMLInputElement>;
   labelClassName?: string;
   labelRef?: RefObject<HTMLSpanElement>;
 }

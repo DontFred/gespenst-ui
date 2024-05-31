@@ -18,11 +18,7 @@ boo@gespenst:~/hui-buh$ yarn add @gespenst/checkbox
 import { Checkbox } from "@gespenst/checkbox";
 
 export default function App() {
-  return (
-    <Checkbox>
-      Template
-    </Checkbox>
-  );
+  return <Checkbox>Label</Checkbox>;
 }
 ```
 
