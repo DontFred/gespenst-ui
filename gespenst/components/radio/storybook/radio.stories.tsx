@@ -5,7 +5,24 @@ import { RadioGroup, RadioItem } from "../src";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof RadioGroup> = {
-  argTypes: {},
+  argTypes: {
+    defaultValue: {
+      control: {
+        type: "select",
+      },
+      options: ["option-1", "option-2", "option-3"],
+    },
+    disabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    invalid: {
+      control: {
+        type: "boolean",
+      },
+    },
+  },
   args: {
     children: (
       <Fragment>
@@ -38,5 +55,11 @@ export const Invalid: Story = {
   args: {
     defaultValue: "option-2",
     invalid: true,
+  },
+};
+
+export const Horizontal: Story = {
+  args: {
+    orientation: "horizontal",
   },
 };

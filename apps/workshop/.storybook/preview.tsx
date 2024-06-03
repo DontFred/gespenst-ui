@@ -1,9 +1,12 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 import { themes } from "@storybook/theming";
+import React from "react";
+
 import type { Preview } from "@storybook/react";
+
 import "../src/style.css";
 
-const decorators = [
+const decorators: Preview["decorators"] = [
   withThemeByClassName({
     themes: {
       light: "light",
@@ -11,6 +14,11 @@ const decorators = [
     },
     defaultTheme: "dark",
   }),
+  (Story) => (
+    <div style={{ padding: "1rem", display: "grid", placeItems: "center" }}>
+      <Story />
+    </div>
+  ),
 ];
 
 const preview: Preview = {

@@ -19,10 +19,20 @@ const RadioInvalidContext = createContext<boolean | undefined>(undefined);
  * RadioGroup is the parent component for Radio Item
  */
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
-  ({ invalid, ...rest }, ref) => {
+  ({ className, invalid, label, ...rest }, ref) => {
     return (
       <RadioInvalidContext.Provider value={invalid}>
-        <ArkRadioGroupRoot data-invalid={invalid} ref={ref} {...rest} />
+        <Text>{label}</Text>
+        <ArkRadioGroupRoot
+          aria-invalid={invalid}
+          className={cn(
+            "flex gap-2 data-[orientation=vertical]:flex-col",
+            className
+          )}
+          data-invalid={invalid}
+          ref={ref}
+          {...rest}
+        />
       </RadioInvalidContext.Provider>
     );
   }
@@ -74,7 +84,7 @@ const RadioItem = forwardRef<HTMLLabelElement, RadioProps>(
           >
             <ArkRadioGroupItemControl
               className={cn(
-                "relative size-4 rounded-full bg-background-100 transition-all inner-border inner-border-gray-700",
+                "relative aspect-square size-4 rounded-full bg-background-100 transition-all inner-border inner-border-gray-700",
                 "[&:not([data-state=checked])]:[&:not([data-invalid])]:data-[hover]:bg-gray-100",
                 "[&:not([data-disabled])]:[&:not([data-invalid])]:data-[state=checked]:inner-border-gray-1000",
                 "after:absolute after:left-1/2 after:top-1/2 after:size-0 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-gray-1000 after:transition-all data-[state=checked]:after:size-2",
@@ -90,6 +100,7 @@ const RadioItem = forwardRef<HTMLLabelElement, RadioProps>(
                 as="span"
                 className={cn("ml-2 transition-colors", labelClassName)}
                 ref={labelRef}
+                variant="label-13"
               >
                 {typeof children === "function" ? children(radio) : children}
               </Text>

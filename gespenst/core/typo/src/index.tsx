@@ -219,7 +219,7 @@ TH.displayName = "TH";
 const TBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
   ({ children, className, ...rest }, ref) => {
     return (
-      <tbody className={cn("bg-card", className)} ref={ref} {...rest}>
+      <tbody className={cn("bg-background-100", className)} ref={ref} {...rest}>
         {children}
       </tbody>
     );

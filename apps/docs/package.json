@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@gespenst/tooltip": "*",
     "@gespenst/radio": "*",
     "@gespenst/checkbox": "*",
     "@gespenst/card": "*",

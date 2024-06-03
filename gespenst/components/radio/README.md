@@ -15,13 +15,15 @@ boo@gespenst:~/hui-buh$ yarn add @gespenst/radio
 ## Usage
 
 ```tsx
-import { Radio } from "@gespenst/radio";
+import { RadioGroup, RadioItem } from "@gespenst/radio";
 
 export default function App() {
   return (
-    <Radio>
-      Template
-    </Radio>
+    <RadioGroup>
+      <RadioItem value="option-1">Option 1</RadioItem>
+      <RadioItem value="option-2">Option 2</RadioItem>
+      <RadioItem value="option-3">Option 3</RadioItem>
+    </RadioGroup>
   );
 }
 ```
