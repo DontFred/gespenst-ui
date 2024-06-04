@@ -16,6 +16,7 @@ interface TextRefMap {
   h4: HTMLHeadingElement;
   h5: HTMLHeadingElement;
   h6: HTMLHeadingElement;
+  label: HTMLLabelElement;
   p: HTMLParagraphElement;
   span: HTMLSpanElement;
 }

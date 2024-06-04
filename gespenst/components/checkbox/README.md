@@ -22,6 +22,18 @@ export default function App() {
 }
 ```
 
+```tsx
+import { Checkbox, CheckboxGroup } from "@gespenst/checkbox";
+
+export default function App() {
+  return (
+    <CheckboxGroup>
+      <Checkbox>Label</Checkbox>
+    </CheckboxGroup>
+  );
+}
+```
+
 ## Documentation
 
 You can find details about usage

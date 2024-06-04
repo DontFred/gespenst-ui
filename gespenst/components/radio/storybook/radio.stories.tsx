@@ -63,3 +63,9 @@ export const Horizontal: Story = {
     orientation: "horizontal",
   },
 };
+
+export const WithLabel: Story = {
+  args: {
+    label: "Radio Group Label",
+  },
+};

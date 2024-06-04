@@ -4,6 +4,7 @@ import {
   RadioGroupItemControl as ArkRadioGroupItemControl,
   RadioGroupItemHiddenInput as ArkRadioGroupItemHiddenInput,
   RadioGroupItemText as ArkRadioGroupItemText,
+  RadioGroupLabel as ArkRadioGroupLabel,
   RadioGroupRoot as ArkRadioGroupRoot,
 } from "@ark-ui/react/radio-group";
 import { Text } from "@gespenst/typo";
@@ -19,10 +20,22 @@ const RadioInvalidContext = createContext<boolean | undefined>(undefined);
  * RadioGroup is the parent component for Radio Item
  */
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
-  ({ className, invalid, label, ...rest }, ref) => {
+  (
+    {
+      children,
+      className,
+      invalid,
+      label,
+      labelClassName,
+      labelRef,
+      labelTextClassName,
+      labelTextRef,
+      ...rest
+    },
+    ref
+  ) => {
     return (
       <RadioInvalidContext.Provider value={invalid}>
-        <Text>{label}</Text>
         <ArkRadioGroupRoot
           aria-invalid={invalid}
           className={cn(
@@ -32,7 +45,24 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
           data-invalid={invalid}
           ref={ref}
           {...rest}
-        />
+        >
+          {label && (
+            <ArkRadioGroupLabel className={labelClassName} ref={labelRef}>
+              <Text
+                as="span"
+                className={cn(
+                  "block max-w-full text-gray-900",
+                  labelTextClassName
+                )}
+                ref={labelTextRef}
+                variant="label-13"
+              >
+                {label}
+              </Text>
+            </ArkRadioGroupLabel>
+          )}
+          {children}
+        </ArkRadioGroupRoot>
       </RadioInvalidContext.Provider>
     );
   }

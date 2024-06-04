@@ -8,11 +8,95 @@ import {
   CheckboxLabel as ArkCheckboxLabel,
   CheckboxRoot as ArkCheckboxRoot,
 } from "@ark-ui/react/checkbox";
+import { ark } from "@ark-ui/react/factory";
 import { Text } from "@gespenst/typo";
 import { cn } from "@gespenst/utils";
-import { forwardRef } from "react";
+import { createContext, forwardRef, useContext } from "react";
 
-import type { CheckboxProps } from "./types";
+import type { CheckboxGroupProps, CheckboxProps } from "./types";
+
+const RadioInvalidDisabledContext = createContext<{
+  disabled?: boolean;
+  invalid?: boolean;
+}>({});
+
+/**
+ * CheckboxGroup \
+ * CheckboxGroup is the parent component for Checkbox Item
+ * @param CheckboxGroupProps - Has all HTMLArkProps<"div"> Props
+ * @param CheckboxGroupProps.className - To style the checkbox group (additional class will get merged by cn()).
+ * @param CheckboxGroupProps.disabled - If true, checkbox group will be disabled.
+ * @param CheckboxGroupProps.invalid - If true, checkbox group will be invalid.
+ * @param CheckboxGroupProps.label - Label for the checkbox group.
+ * @param CheckboxGroupProps.labelClassName - To style the label (additional class will get merged by cn()).
+ * @param CheckboxGroupProps.labelRef - Ref for the label.
+ * @param CheckboxGroupProps.labelTextClassName - To style the label text (additional class will get merged by cn()).
+ * @param CheckboxGroupProps.labelTextRef - Ref for the label text.
+ * @param CheckboxGroupProps.orientation - Orientation of the checkbox group.
+ * @returns JSX.Element
+ * @example
+ * <CheckboxGroup>
+ *   <Checkbox>Label</Checkbox>
+ * </CheckboxGroup>
+ */
+const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
+  (
+    {
+      children,
+      className,
+      disabled,
+      invalid,
+      label,
+      labelClassName,
+      labelRef,
+      labelTextClassName,
+      labelTextRef,
+      orientation = "vertical",
+      ...rest
+    },
+    ref
+  ) => {
+    return (
+      <RadioInvalidDisabledContext.Provider
+        value={{
+          disabled,
+          invalid,
+        }}
+      >
+        <ark.div
+          className={cn(
+            "flex gap-2 data-[orientation=vertical]:flex-col",
+            className
+          )}
+          data-disabled={disabled}
+          data-invalid={invalid}
+          data-orientation={orientation}
+          ref={ref}
+          {...rest}
+        >
+          {label && (
+            <ark.label className={labelClassName} ref={labelRef}>
+              <Text
+                as="span"
+                className={cn(
+                  "block max-w-full text-gray-900",
+                  labelTextClassName
+                )}
+                ref={labelTextRef}
+                variant="label-13"
+              >
+                {label}
+              </Text>
+            </ark.label>
+          )}
+          {children}
+        </ark.div>
+      </RadioInvalidDisabledContext.Provider>
+    );
+  }
+);
+
+CheckboxGroup.displayName = "CheckboxGroup";
 
 /**
  * Checkbox \
@@ -41,17 +125,22 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
       className,
       controllerClassName,
       controllerRef,
+      disabled,
       indicatorCheckClassName,
       indicatorCheckRef,
       indicatorIndeterminateClassName,
       indicatorIndeterminateRef,
       inputRef,
+      invalid,
       labelClassName,
       labelRef,
       ...rest
     },
     ref
   ) => {
+    const { disabled: disabledParent, invalid: invalidParent } = useContext(
+      RadioInvalidDisabledContext
+    );
     return (
       <ArkCheckboxRoot
         className={cn(
@@ -60,6 +149,8 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
           "data-[invalid]:text-red-900",
           className
         )}
+        disabled={disabledParent ?? disabled}
+        invalid={invalidParent ?? invalid}
         ref={ref}
         {...rest}
       >
@@ -135,4 +226,4 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 
 Checkbox.displayName = "Checkbox";
 
-export { Checkbox };
+export { Checkbox, CheckboxGroup };

@@ -35,7 +35,8 @@
   "dependencies": {
     "@ark-ui/react": "^3.0.1",
     "@gespenst/utils": "*",
-    "@gespenst/typo": "*"
+    "@gespenst/typo": "*",
+    "@gespenst/description": "*"
   },
   "devDependencies": {
     "eslint": "^8",

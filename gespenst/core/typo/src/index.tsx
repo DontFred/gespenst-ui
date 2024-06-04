@@ -49,7 +49,7 @@ const Text = forwardRef<HTMLElement, TextProps>(
       return (
         <Comp
           className={cn(textVariants({ size, variant }), className)}
-          ref={ref as unknown as RefObject<HTMLDivElement>}
+          ref={ref as RefObject<never>}
           {...rest}
         />
       );
@@ -61,7 +61,7 @@ const Text = forwardRef<HTMLElement, TextProps>(
               responsiveSizeTextVariants(size as ResponsiveSizeTextVariants),
               className
             )}
-            ref={ref as unknown as RefObject<HTMLDivElement>}
+            ref={ref as RefObject<never>}
             {...rest}
           />
         );
@@ -75,7 +75,7 @@ const Text = forwardRef<HTMLElement, TextProps>(
               ),
               className
             )}
-            ref={ref as unknown as RefObject<HTMLDivElement>}
+            ref={ref as RefObject<never>}
             {...rest}
           />
         );

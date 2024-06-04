@@ -2,7 +2,19 @@ import type {
   CheckboxContextProps as ArkCheckboxContextProps,
   CheckboxRootProps as ArkCheckboxRootProps,
 } from "@ark-ui/react/checkbox";
+import type { HTMLArkProps } from "@ark-ui/react/factory";
 import type { ReactNode, RefObject } from "react";
+
+export interface CheckboxGroupProps extends HTMLArkProps<"div"> {
+  disabled?: boolean;
+  invalid?: boolean;
+  label?: string;
+  labelClassName?: string;
+  labelRef?: RefObject<HTMLLabelElement>;
+  labelTextClassName?: string;
+  labelTextRef?: RefObject<HTMLSpanElement>;
+  orientation?: "horizontal" | "vertical";
+}
 
 export interface CheckboxProps extends Omit<ArkCheckboxRootProps, "children"> {
   asChild?: undefined;

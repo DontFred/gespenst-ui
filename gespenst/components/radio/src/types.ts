@@ -8,6 +8,10 @@ import type { ReactNode, RefObject } from "react";
 export interface RadioGroupProps extends ArkRadioGroupRootProps {
   invalid?: boolean;
   label?: string;
+  labelClassName?: string;
+  labelRef?: RefObject<HTMLLabelElement>;
+  labelTextClassName?: string;
+  labelTextRef?: RefObject<HTMLSpanElement>;
 }
 
 export interface RadioProps extends Omit<ArkRadioGroupItemProps, "children"> {
