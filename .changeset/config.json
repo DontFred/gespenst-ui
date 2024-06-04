@@ -5,6 +5,7 @@
   "fixed": [],
   "linked": [
     [
+      "@gespenst/description",
       "@gespenst/tooltip",
       "@gespenst/radio",
       "@gespenst/checkbox",

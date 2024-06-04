@@ -56,7 +56,7 @@ function getArrowPlacement(placement: TooltipProps["position"]): string {
  * @param TooltipProps - Has all Ark Tooltip Root props.
  * @param TooltipProps.className - To style the tooltip (additional class will get merged by cn()).
  * @param TooltipProps.interactive - If true, tooltip will be interactive.
- * @param TooltipProps.position - Position of the tooltip.
+ * @param TooltipProps.position - Position of the tooltip. (default: top)
  * @param TooltipProps.positionerClassName - To style the positioner (additional class will get merged by cn()).
  * @param TooltipProps.positionerRef - Ref for the positioner.
  * @param TooltipProps.positioning - Positioning of the tooltip.
@@ -76,13 +76,15 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
       children,
       className,
       interactive = true,
-      position = "bottom",
+      position = "top",
       positionerClassName,
       positionerRef,
       positioning,
       text,
       textClassName,
       textRef,
+      triggerClassName,
+      triggerRef,
       type,
       ...rest
     },
@@ -94,6 +96,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         interactive={interactive}
         positioning={{
           ...positioning,
+          flip: position ? true : positioning?.flip,
           offset: {
             mainAxis: 12,
             ...positioning?.offset,
@@ -105,7 +108,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
           {(tooltip) => (
             <Fragment>
               <ArkTooltipTrigger asChild>
-                <div>
+                <div className={triggerClassName} ref={triggerRef}>
                   {typeof children == "function" ? children(tooltip) : children}
                 </div>
               </ArkTooltipTrigger>

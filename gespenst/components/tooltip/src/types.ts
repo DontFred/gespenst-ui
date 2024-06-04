@@ -20,5 +20,6 @@ export interface TooltipProps
   text?: ReactNode;
   textClassName?: string;
   textRef?: Ref<HTMLDivElement>;
+  triggerClassName?: string;
   triggerRef?: Ref<HTMLDivElement>;
 }
