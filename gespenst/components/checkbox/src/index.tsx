@@ -226,4 +226,4 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 
 Checkbox.displayName = "Checkbox";
 
-export { Checkbox, CheckboxGroup };
+export { Checkbox, CheckboxGroup, RadioInvalidDisabledContext };

@@ -3,10 +3,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "turbo build --concurrency=100%",
-    "dev": "turbo dev --concurrency=100%",
-    "lint": "turbo lint --concurrency=100%",
-    "lint:fix": "turbo lint:fix --concurrency=100%",
+    "build": "turbo build --concurrency=18",
+    "dev": "turbo dev --concurrency=18",
+    "lint": "turbo lint --concurrency=18",
+    "lint:fix": "turbo lint:fix --concurrency=18",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "rm -rf node_modules && rm bun.lockb",
     "svgr": "turbo svgr",
@@ -16,15 +16,15 @@
     "@changesets/cli": "^2.27.3",
     "@gespenst/eslint-config": "*",
     "@gespenst/typescript-config": "*",
-    "@turbo/gen": "^1.13.3",
+    "@turbo/gen": "^2.0.1",
     "eslint-config-gi": "^0.1.5",
     "prettier": "^3.2.5",
-    "turbo": "latest"
+    "turbo": "^2.0.1"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "bun@1.1.8",
+  "packageManager": "bun@1.1.9",
   "prettier": "eslint-config-gi/prettier",
   "workspaces": [
     "apps/*",

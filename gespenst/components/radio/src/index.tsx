@@ -144,4 +144,4 @@ const RadioItem = forwardRef<HTMLLabelElement, RadioProps>(
 
 RadioItem.displayName = "RadioItem";
 
-export { RadioGroup, RadioItem };
+export { RadioGroup, RadioInvalidContext, RadioItem };
