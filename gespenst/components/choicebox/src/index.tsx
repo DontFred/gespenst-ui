@@ -1,4 +1,12 @@
 import {
+  CheckboxContext as ArkCheckboxContext,
+  CheckboxControl as ArkCheckboxControl,
+  CheckboxHiddenInput as ArkCheckboxHiddenInput,
+  CheckboxIndicator as ArkCheckboxIndicator,
+  CheckboxLabel as ArkCheckboxLabel,
+  CheckboxRoot as ArkCheckboxRoot,
+} from "@ark-ui/react/checkbox";
+import {
   RadioGroupContext as ArkRadioGroupContext,
   RadioGroupItem as ArkRadioGroupItem,
   RadioGroupItemControl as ArkRadioGroupItemControl,
@@ -15,7 +23,7 @@ import type { ChoiceboxRadioProps } from "./types";
 /**
  * ChoiceboxRadioProps \
  * ChoiceboxRadioProps is a larger input way for radio.
- * @param ChoiceboxRadioProps - Has all HTMLArkProps<"div"> Props
+ * @param ChoiceboxRadioProps - Has all Ark RadioGroupItem Props
  * @param ChoiceboxRadioProps.childrenWrapperClassName - To style the children wrapper (additional class will get merged by cn()).
  * @param ChoiceboxRadioProps.childrenWrapperRef - To get the children wrapper reference.
  * @param ChoiceboxRadioProps.className - To style the choicebox (additional class will get merged by cn()).
@@ -68,7 +76,8 @@ const ChoiceboxRadio = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
               "[&:not([data-disabled])]:[&:not([data-invalid])]:data-[state=checked]:border-blue-900 [&:not([data-disabled])]:[&:not([data-invalid])]:data-[state=checked]:bg-blue-100 [&:not([data-disabled])]:[&:not([data-invalid])]:data-[state=checked]:text-blue-900",
               "[&:not([data-disabled])]:[&:not([data-invalid])]:data-[state=checked]:data-[hover]:bg-blue-200",
               "data-[disabled]:cursor-not-allowed data-[disabled]:select-none data-[disabled]:text-gray-500",
-              "data-[invalid]:text-red-900",
+              "data-[invalid]:text-red-900 [&:not([data-state=checked])]:data-[invalid]:data-[hover]:border-red-500 [&:not([data-state=checked])]:data-[invalid]:data-[hover]:bg-red-100",
+              "[&:not([data-disabled])]:data-[invalid]:data-[state=checked]:border-red-900 [&:not([data-disabled])]:data-[invalid]:data-[state=checked]:bg-red-100",
               className
             )}
             invalid={invalidParent ?? invalid}
@@ -76,7 +85,7 @@ const ChoiceboxRadio = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
             value={value}
             {...rest}
           >
-            <ArkRadioGroupItemText className="flex flex-col items-stretch justify-start gap-1">
+            <ArkRadioGroupItemText className="group flex flex-col items-stretch justify-start gap-1">
               <Text
                 as="span"
                 className={titleClassName}
@@ -88,8 +97,9 @@ const ChoiceboxRadio = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
               <Text
                 as="span"
                 className={cn(
-                  "text-gray-900",
-                  radio.value === value && "text-blue-900",
+                  "text-gray-900 group-data-[disabled]:text-current",
+                  radio.value === value &&
+                    "text-blue-900 group-data-[invalid]:text-red-900",
                   descriptionClassName
                 )}
                 ref={descriptionRef}
@@ -118,6 +128,8 @@ const ChoiceboxRadio = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
                   className={cn(
                     "-m-3 mt-3 w-[calc(100%+12px+12px)] border-t border-blue-900 bg-background-100 p-3 text-foreground transition-all",
                     "peer-[[data-hover]]:bg-gray-100",
+                    "peer-data-[disabled]:border-gray-400 peer-data-[disabled]:bg-background-200 peer-data-[disabled]:text-gray-500",
+                    "peer-data-[invalid]:border-red-900",
                     radio.value !== value && "invisible",
                     childrenWrapperClassName
                   )}
@@ -136,4 +148,24 @@ const ChoiceboxRadio = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
 
 ChoiceboxRadio.displayName = "ChoiceboxRadio";
 
-export { ChoiceboxRadio };
+const ChoiceboxCheckbox = forwardRef<HTMLLabelElement, ChoiceboxRadioProps>(
+  ({ ...rest }, ref) => {
+    return (
+      <ArkCheckboxContext>
+        {(checkbox) => (
+          <ArkCheckboxRoot {...rest} ref={ref}>
+            <ArkCheckboxLabel></ArkCheckboxLabel>
+            <ArkCheckboxControl>
+              <ArkCheckboxIndicator />
+            </ArkCheckboxControl>
+            <ArkCheckboxHiddenInput />
+          </ArkCheckboxRoot>
+        )}
+      </ArkCheckboxContext>
+    );
+  }
+);
+
+ChoiceboxCheckbox.displayName = "CheckboxCheckbox";
+
+export { ChoiceboxCheckbox, ChoiceboxRadio };

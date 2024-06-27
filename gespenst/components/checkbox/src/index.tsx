@@ -15,7 +15,7 @@ import { createContext, forwardRef, useContext } from "react";
 
 import type { CheckboxGroupProps, CheckboxProps } from "./types";
 
-const RadioInvalidDisabledContext = createContext<{
+const CheckboxInvalidDisabledContext = createContext<{
   disabled?: boolean;
   invalid?: boolean;
 }>({});
@@ -57,7 +57,7 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
     ref
   ) => {
     return (
-      <RadioInvalidDisabledContext.Provider
+      <CheckboxInvalidDisabledContext.Provider
         value={{
           disabled,
           invalid,
@@ -91,7 +91,7 @@ const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
           )}
           {children}
         </ark.div>
-      </RadioInvalidDisabledContext.Provider>
+      </CheckboxInvalidDisabledContext.Provider>
     );
   }
 );
@@ -139,7 +139,7 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
     ref
   ) => {
     const { disabled: disabledParent, invalid: invalidParent } = useContext(
-      RadioInvalidDisabledContext
+      CheckboxInvalidDisabledContext
     );
     return (
       <ArkCheckboxRoot
@@ -226,4 +226,4 @@ const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
 
 Checkbox.displayName = "Checkbox";
 
-export { Checkbox, CheckboxGroup, RadioInvalidDisabledContext };
+export { Checkbox, CheckboxGroup, CheckboxInvalidDisabledContext };

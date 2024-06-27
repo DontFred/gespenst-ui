@@ -19,7 +19,7 @@
     "@turbo/gen": "^2.0.1",
     "eslint-config-gi": "^0.1.5",
     "prettier": "^3.2.5",
-    "turbo": "^2.0.1"
+    "turbo": "^2.0.5"
   },
   "engines": {
     "node": ">=18"
